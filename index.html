@@ -1,0 +1,86 @@
+# GitHub Pages 部署流程（中纬联23.4 网站）
+
+以下步骤可以让你把 `index.html` 和 `assets/` 目录部署到 GitHub Pages，并绑定域名 **verla234.org**。
+
+---
+
+## 1. 准备本地项目
+1. 在你的电脑上新建一个文件夹，例如 `verla23-site/`。
+2. 把 `index.html` 放到根目录。
+3. 新建 `assets/` 文件夹，把 `logo.svg`、`favicon-256.png`、微信二维码等放进去。
+
+目录结构示例：
+```
+verla23-site/
+├─ index.html
+└─ assets/
+   ├─ logo.svg
+   ├─ favicon-256.png
+   └─ wechat-qr.png
+```
+
+---
+
+## 2. 创建 GitHub 仓库
+1. 打开 [github.com](https://github.com)，登录你的账号。
+2. 点击右上角 **New repository**，仓库名可以叫 `verla23-site`。
+3. 勾选 “Public”（公开），点击 **Create repository**。
+
+---
+
+## 3. 上传文件
+有两种方法：
+
+- **方法 A：网页上传**
+  1. 打开仓库首页 → 点击 **Add file → Upload files**。
+  2. 把整个 `verla23-site/` 文件夹里的文件拖进去。
+  3. 提交（Commit changes）。
+
+- **方法 B：命令行 Git**
+  ```bash
+  cd verla23-site
+  git init
+  git add .
+  git commit -m "first commit"
+  git branch -M main
+  git remote add origin https://github.com/<你的用户名>/verla23-site.git
+  git push -u origin main
+  ```
+
+---
+
+## 4. 启用 GitHub Pages
+1. 进入仓库 → 点击 **Settings**。
+2. 左侧找到 **Pages**。
+3. Source 选择：`Deploy from a branch`。
+4. Branch 选择：`main`，文件夹选择 `/ (root)`。
+5. 保存后，几分钟内会生成一个临时网址，例如：
+   `https://<你的用户名>.github.io/verla23-site/`
+
+---
+
+## 5. 绑定自定义域名
+1. 在仓库的 **Pages → Custom domain** 中，输入 `www.verla234.org`。
+2. 仓库根目录会自动生成一个 `CNAME` 文件，内容就是：
+   ```
+   www.verla234.org
+   ```
+3. 去 **Namecheap → Domain → Advanced DNS**：
+   - 添加 **CNAME Record**：
+     - Host: `www`
+     - Value: `<你的用户名>.github.io`
+     - TTL: Automatic
+   - 添加 **URL Redirect Record**：
+     - Host: `@`
+     - Value: `https://www.verla234.org`
+     - Type: Permanent (301)
+
+---
+
+## 6. 等待生效
+- DNS 通常需要 10 分钟到几小时。
+- 最终访问 `https://www.verla234.org`，就能看到你的网站首页。
+
+---
+
+✅ 到这一步，你的中纬联23.4 网站就正式上线了，可以随时更新：只要把最新的 `index.html` 推送到 GitHub，网站会自动刷新。

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <style>
+      .gold { stroke: #d4af37; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    </style>
+  </defs>
+  <!-- ring -->
+  <circle class="gold" cx="512.0" cy="512.0" r="419.84" stroke-width="48"/>
+  <!-- tilted axis -->
+  <line class="gold" x1="324.92745759539287" y1="79.70086111781762" x2="699.0725424046071" y2="944.2991388821824" stroke-width="48"/>
+  <!-- 23.4° arc -->
+  <path class="gold" d="M 512.00,742.91 A 230.91,230.91 0 0 1 603.71,723.92" stroke-width="36"/>
+  <circle cx="603.71" cy="723.92" r="22.0" fill="#d4af37"/>
+</svg>
