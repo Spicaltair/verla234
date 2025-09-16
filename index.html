@@ -1,86 +1,104 @@
-# GitHub Pages 部署流程（中纬联23.4 网站）
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>中纬联23.4 — 官方网站（verla234.org）</title>
+  <meta name="description" content="中纬联23.4 出海协作网络｜连接中国制造与墨西哥 / 中东 / 东南亚的专业桥梁。官方网站 verla234.org。"/>
+  <link rel="canonical" href="https://www.verla234.org/" />
+  <link rel="icon" type="image/png" href="/assets/favicon-256.png">
+  <style>
+    :root{--bg:#0a0a0a;--panel:#121212;--gold:#d4af37;--text:#e6e6e6;--muted:#acacac;--edge:rgba(212,175,55,.18)}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans SC","PingFang SC",sans-serif}
+    a{color:var(--gold);text-decoration:none}
+    a:hover{opacity:.92}
+    .wrap{width:min(1100px,92vw);margin:0 auto}
+    .nav{position:sticky;top:0;z-index:10;background:linear-gradient(180deg,rgba(0,0,0,.85),rgba(0,0,0,.42));backdrop-filter:blur(6px);border-bottom:1px solid var(--edge)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{height:34px}
+    .brand h1{font-size:18px;margin:0;letter-spacing:.6px;color:var(--gold)}
+    .btn{border:1px solid var(--gold);padding:8px 12px;border-radius:12px;font-weight:600}
+    .hero{position:relative;padding:96px 0 72px;overflow:hidden}
+    .hero::before{content:"";position:absolute;inset:-20% -10% auto -10%;height:420px;background:radial-gradient(ellipse at center, rgba(212,175,55,.18), transparent 60%);filter:blur(20px);z-index:0}
+    .hero .wrap{position:relative;z-index:1}
+    .kicker{color:var(--gold);font-weight:700;letter-spacing:.22em;font-size:12px;text-transform:uppercase;opacity:.9}
+    .hero h2{margin:12px 0 10px;font-size:clamp(28px,5.8vw,48px);line-height:1.12;color:#fff}
+    .hero p{margin:0 0 26px;color:var(--muted);max-width:780px;font-size:clamp(14px,2.4vw,18px)}
+    .ctaRow{display:flex;gap:12px;flex-wrap:wrap}
+    .btnPrimary{background:var(--gold);color:#1a1200;padding:12px 18px;border-radius:14px;font-weight:700;border:1px solid #e4c861;box-shadow:0 10px 22px rgba(212,175,55,.25)}
+    .btnGhost{border:1px solid var(--gold);color:var(--gold);padding:12px 18px;border-radius:14px;font-weight:700}
+    .section{padding:64px 0;border-top:1px solid var(--edge)}
+    .section h3{margin:0 0 10px;font-size:24px;color:#fff}
+    .section p.lead{margin:0 0 26px;color:var(--muted);max-width:820px}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+    .card{grid-column:span 12;background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.00));border:1px solid var(--edge);border-radius:16px;padding:18px;box-shadow:0 12px 22px rgba(0,0,0,.28)}
+    .card h4{margin:0 0 6px;color:var(--gold);font-size:18px}
+    .card p{margin:0;color:#cfcfcf}
+    @media(min-width:740px){.card{grid-column:span 6}}
+    @media(min-width:980px){.card{grid-column:span 4}}
+    .contact{display:grid;gap:12px;max-width:720px}
+    .meta{font-size:14px;color:var(--muted)}
+    .qr{width:156px;height:156px;border:1px dashed var(--edge);border-radius:12px;display:grid;place-items:center;color:var(--muted)}
+    footer{padding:40px 0;border-top:1px solid var(--edge);color:var(--muted);font-size:14px}
+  </style>
+</head>
+<body>
+  <!-- 顶部导航 -->
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <div class="brand">
+        <img src="assets/logo.svg" alt="中纬联23.4 抽象标">
+        <h1>中纬联23.4</h1>
+      </div>
+      <a class="btn" href="#contact">联系</a>
+    </div>
+  </nav>
 
-以下步骤可以让你把 `index.html` 和 `assets/` 目录部署到 GitHub Pages，并绑定域名 **verla234.org**。
+  <!-- 英雄横幅（中文版） -->
+  <header class="hero">
+    <div class="wrap">
+      <div class="kicker">中纬联23.4 — OFFICIAL SITE｜verla234.org</div>
+      <h2>连接中国制造与墨西哥 / 中东 / 东南亚的专业桥梁</h2>
+      <p>中纬联23.4 是一个由工程、供应链与本地资源伙伴组成的协作网络，重点覆盖 <strong style="color:var(--gold)">墨西哥、中东与东南亚</strong>。我们提供选址与建设支持、材料与供应链调查（如聚丙烯夹芯板研究）、可行性研究与落地执行。</p>
+      <div class="ctaRow">
+        <a class="btnPrimary" href="https://wa.me/5218128809927" target="_blank" rel="noopener">WhatsApp 咨询</a>
+        <a class="btnGhost" href="#services">查看服务</a>
+      </div>
+    </div>
+  </header>
 
----
+  <!-- 服务范围 -->
+  <section id="services" class="section">
+    <div class="wrap">
+      <h3>服务范围</h3>
+      <p class="lead">精简透明的范围定义，便于快速沟通与报价。</p>
+      <div class="grid">
+        <div class="card"><h4>工厂选址与建设支持</h4><p>园区筛选、选址比较、初步布局建议、土建/机电落地路径。</p></div>
+        <div class="card"><h4>材料与供应链调查</h4><p>例如聚丙烯夹芯板（PP）技术参数与供应商调研、成本与交期评估。</p></div>
+        <div class="card"><h4>本地资源对接</h4><p>法务、人力、报关、物流与施工单位资源，快速建立交付团队。</p></div>
+        <div class="card"><h4>可行性与合规</h4><p>基础合规路径建议、时间表草案与关键风险提示（非法律意见）。</p></div>
+      </div>
+    </div>
+  </section>
 
-## 1. 准备本地项目
-1. 在你的电脑上新建一个文件夹，例如 `verla23-site/`。
-2. 把 `index.html` 放到根目录。
-3. 新建 `assets/` 文件夹，把 `logo.svg`、`favicon-256.png`、微信二维码等放进去。
+  <!-- 联系方式 -->
+  <section id="contact" class="section">
+    <div class="wrap">
+      <h3>联系</h3>
+      <div class="contact">
+        <div class="meta">🌐 官方网址：<a href="https://www.verla234.org" target="_blank" rel="noopener">www.verla234.org</a></div>
+        <div class="meta">📱 WhatsApp（商业号）：<a href="https://wa.me/5218128809927" target="_blank" rel="noopener">+52 1 812 880 9927</a></div>
+        <div class="meta">📧 Email：<a href="mailto:info@verla234.org">info@verla234.org</a></div>
+        <div class="meta">💬 微信：请扫描二维码添加</div>
+        <div class="qr">在此放二维码</div>
+      </div>
+    </div>
+  </section>
 
-目录结构示例：
-```
-verla23-site/
-├─ index.html
-└─ assets/
-   ├─ logo.svg
-   ├─ favicon-256.png
-   └─ wechat-qr.png
-```
-
----
-
-## 2. 创建 GitHub 仓库
-1. 打开 [github.com](https://github.com)，登录你的账号。
-2. 点击右上角 **New repository**，仓库名可以叫 `verla23-site`。
-3. 勾选 “Public”（公开），点击 **Create repository**。
-
----
-
-## 3. 上传文件
-有两种方法：
-
-- **方法 A：网页上传**
-  1. 打开仓库首页 → 点击 **Add file → Upload files**。
-  2. 把整个 `verla23-site/` 文件夹里的文件拖进去。
-  3. 提交（Commit changes）。
-
-- **方法 B：命令行 Git**
-  ```bash
-  cd verla23-site
-  git init
-  git add .
-  git commit -m "first commit"
-  git branch -M main
-  git remote add origin https://github.com/<你的用户名>/verla23-site.git
-  git push -u origin main
-  ```
-
----
-
-## 4. 启用 GitHub Pages
-1. 进入仓库 → 点击 **Settings**。
-2. 左侧找到 **Pages**。
-3. Source 选择：`Deploy from a branch`。
-4. Branch 选择：`main`，文件夹选择 `/ (root)`。
-5. 保存后，几分钟内会生成一个临时网址，例如：
-   `https://<你的用户名>.github.io/verla23-site/`
-
----
-
-## 5. 绑定自定义域名
-1. 在仓库的 **Pages → Custom domain** 中，输入 `www.verla234.org`。
-2. 仓库根目录会自动生成一个 `CNAME` 文件，内容就是：
-   ```
-   www.verla234.org
-   ```
-3. 去 **Namecheap → Domain → Advanced DNS**：
-   - 添加 **CNAME Record**：
-     - Host: `www`
-     - Value: `<你的用户名>.github.io`
-     - TTL: Automatic
-   - 添加 **URL Redirect Record**：
-     - Host: `@`
-     - Value: `https://www.verla234.org`
-     - Type: Permanent (301)
-
----
-
-## 6. 等待生效
-- DNS 通常需要 10 分钟到几小时。
-- 最终访问 `https://www.verla234.org`，就能看到你的网站首页。
-
----
-
-✅ 到这一步，你的中纬联23.4 网站就正式上线了，可以随时更新：只要把最新的 `index.html` 推送到 GitHub，网站会自动刷新。
+  <footer>
+    <div class="wrap">© 2025 中纬联23.4 — All rights reserved.｜verla234.org</div>
+  </footer>
+</body>
+</html>
