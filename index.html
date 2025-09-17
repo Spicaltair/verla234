@@ -20,28 +20,26 @@
     .brand img{height:34px}
     .brand h1{font-size:18px;margin:0;letter-spacing:.6px;color:var(--gold)}
     .btn{border:1px solid var(--gold);padding:8px 12px;border-radius:12px;font-weight:600}
-    .hero{position:relative;padding:96px 0 72px;overflow:hidden}
-    .hero::before{content:"";position:absolute;inset:-20% -10% auto -10%;height:420px;background:radial-gradient(ellipse at center, rgba(212,175,55,.18), transparent 60%);filter:blur(20px);z-index:0}
+    .hero{position:relative;padding:140px 0 140px;overflow:hidden;text-align:center;color:#fff;background:url("assets/hero-bg.png") no-repeat center center/cover}
+    .hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,0.55);z-index:0}
     .hero .wrap{position:relative;z-index:1}
-    .kicker{color:var(--gold);font-weight:700;letter-spacing:.22em;font-size:12px;text-transform:uppercase;opacity:.9}
-    .hero h2{margin:12px 0 10px;font-size:clamp(28px,5.8vw,48px);line-height:1.12;color:#fff}
-    .hero p{margin:0 0 26px;color:var(--muted);max-width:780px;font-size:clamp(14px,2.4vw,18px)}
-    .ctaRow{display:flex;gap:12px;flex-wrap:wrap}
+    .hero h2{margin:0 0 20px;font-size:clamp(32px,6vw,56px);line-height:1.2}
+    .hero p{margin:0 auto;max-width:760px;color:var(--muted);font-size:clamp(16px,2.6vw,20px)}
+    .ctaRow{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:28px}
     .btnPrimary{background:var(--gold);color:#1a1200;padding:12px 18px;border-radius:14px;font-weight:700;border:1px solid #e4c861;box-shadow:0 10px 22px rgba(212,175,55,.25)}
     .btnGhost{border:1px solid var(--gold);color:var(--gold);padding:12px 18px;border-radius:14px;font-weight:700}
     .section{padding:64px 0;border-top:1px solid var(--edge)}
-    .section h3{margin:0 0 10px;font-size:24px;color:#fff}
-    .section p.lead{margin:0 0 26px;color:var(--muted);max-width:820px}
+    .section h3{margin:0 0 10px;font-size:24px;color:#fff;text-align:center}
     .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
-    .card{grid-column:span 12;background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.00));border:1px solid var(--edge);border-radius:16px;padding:18px;box-shadow:0 12px 22px rgba(0,0,0,.28)}
-    .card h4{margin:0 0 6px;color:var(--gold);font-size:18px}
-    .card p{margin:0;color:#cfcfcf}
+    .card{grid-column:span 12;background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.00));border:1px solid var(--edge);border-radius:16px;padding:28px;text-align:center;box-shadow:0 12px 22px rgba(0,0,0,.28)}
+    .card h4{margin:0;color:var(--gold);font-size:18px}
     @media(min-width:740px){.card{grid-column:span 6}}
-    @media(min-width:980px){.card{grid-column:span 4}}
-    .contact{display:grid;gap:12px;max-width:720px}
-    .meta{font-size:14px;color:var(--muted)}
-    .qr{width:156px;height:156px;border:1px dashed var(--edge);border-radius:12px;display:grid;place-items:center;color:var(--muted)}
-    footer{padding:40px 0;border-top:1px solid var(--edge);color:var(--muted);font-size:14px}
+    @media(min-width:980px){.card{grid-column:span 3}}
+    .contact{display:grid;gap:20px;max-width:720px;margin:0 auto;text-align:center}
+    .contact-item{display:flex;align-items:center;justify-content:center;gap:10px;font-size:16px;color:var(--muted)}
+    .contact-item img{width:20px;height:20px}
+    .qr{width:156px;height:156px;margin:0 auto;border:1px dashed var(--edge);border-radius:12px;display:grid;place-items:center;overflow:hidden}
+    footer{padding:40px 0;border-top:1px solid var(--edge);color:var(--muted);font-size:14px;text-align:center}
   </style>
 </head>
 <body>
@@ -56,12 +54,11 @@
     </div>
   </nav>
 
-  <!-- 英雄横幅（中文版） -->
+  <!-- 英雄横幅（新版） -->
   <header class="hero">
     <div class="wrap">
-      <div class="kicker">中纬联23.4 — OFFICIAL SITE｜verla234.org</div>
       <h2>连接中国制造与墨西哥 / 中东 / 东南亚的专业桥梁</h2>
-      <p>中纬联23.4 是一个由工程、供应链与本地资源伙伴组成的协作网络，重点覆盖 <strong style="color:var(--gold)">墨西哥、中东与东南亚</strong>。我们提供选址与建设支持、材料与供应链调查（如聚丙烯夹芯板研究）、可行性研究与落地执行。</p>
+      <p>中纬联23.4 是一个由工程、供应链与本地资源伙伴组成的协作网络。我们提供选址与建设支持、材料与供应链调查、可行性研究与落地执行。</p>
       <div class="ctaRow">
         <a class="btnPrimary" href="https://wa.me/5218128809927" target="_blank" rel="noopener">WhatsApp 咨询</a>
         <a class="btnGhost" href="#services">查看服务</a>
@@ -73,12 +70,11 @@
   <section id="services" class="section">
     <div class="wrap">
       <h3>服务范围</h3>
-      <p class="lead">精简透明的范围定义，便于快速沟通与报价。</p>
       <div class="grid">
-        <div class="card"><h4>工厂选址与建设支持</h4><p>园区筛选、选址比较、初步布局建议、土建/机电落地路径。</p></div>
-        <div class="card"><h4>材料与供应链调查</h4><p>例如聚丙烯夹芯板（PP）技术参数与供应商调研、成本与交期评估。</p></div>
-        <div class="card"><h4>本地资源对接</h4><p>法务、人力、报关、物流与施工单位资源，快速建立交付团队。</p></div>
-        <div class="card"><h4>可行性与合规</h4><p>基础合规路径建议、时间表草案与关键风险提示（非法律意见）。</p></div>
+        <div class="card"><h4>工厂选址与建设支持</h4></div>
+        <div class="card"><h4>材料与供应链调查</h4></div>
+        <div class="card"><h4>本地资源对接</h4></div>
+        <div class="card"><h4>可行性与合规</h4></div>
       </div>
     </div>
   </section>
@@ -88,11 +84,11 @@
     <div class="wrap">
       <h3>联系</h3>
       <div class="contact">
-        <div class="meta">🌐 官方网址：<a href="https://www.verla234.org" target="_blank" rel="noopener">www.verla234.org</a></div>
-        <div class="meta">📱 WhatsApp（商业号）：<a href="https://wa.me/5218128809927" target="_blank" rel="noopener">+52 1 812 880 9927</a></div>
-        <div class="meta">📧 Email：<a href="mailto:info@verla234.org">info@verla234.org</a></div>
-        <div class="meta">💬 微信：请扫描二维码添加</div>
-        <div class="qr">在此放二维码</div>
+        <div class="contact-item"><img src="assets/icon-web.svg" alt="web"><a href="https://www.verla234.org" target="_blank" rel="noopener">www.verla234.org</a></div>
+        <div class="contact-item"><img src="assets/icon-whatsapp.svg" alt="WhatsApp"><a href="https://wa.me/5218128809927" target="_blank" rel="noopener">+52 1 812 880 9927</a></div>
+        <div class="contact-item"><img src="assets/icon-mail.svg" alt="Email"><a href="mailto:info@verla234.org">info@verla234.org</a></div>
+        <div class="contact-item"><img src="assets/icon-wechat.svg" alt="WeChat"> 微信</div>
+        <div class="qr"><img src="assets/wechat-qr.jpg" alt="WeChat QR" style="width:100%;height:100%;object-fit:cover"></div>
       </div>
     </div>
   </section>
