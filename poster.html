@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verla 23.4 海报 - 联系方式优化版</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #0a0a0a;
+      color: #e6e6e6;
+    }
+    .poster {
+      width: 210mm;
+      height: 297mm;
+      background: url('assets/hero-bg.png') no-repeat center center;
+      background-size: cover;
+      border: 3px solid #d4af37;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 40px;
+      position: relative;
+    }
+    .poster::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.7);
+      z-index: 0;
+    }
+    .content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: space-between;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .header img {
+      height: 70px;
+      margin-bottom: 10px;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 32px;
+      color: #d4af37;
+      letter-spacing: 2px;
+    }
+    .slogan {
+      font-size: 18px;
+      margin: 20px 0 30px 0;
+      line-height: 1.6;
+      color: #f0f0f0;
+      text-align: center;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    }
+    .services {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .service-box {
+      display: flex;
+      align-items: center;
+      background: rgba(0,0,0,0.55);
+      border: 1px solid rgba(212,175,55,0.6);
+      border-radius: 10px;
+      padding: 15px;
+    }
+    .service-box img {
+      height: 50px;
+      margin-right: 15px;
+    }
+    .service-box h3 {
+      margin: 0;
+      font-size: 16px;
+      color: #d4af37;
+      line-height: 1.4;
+    }
+    .contact {
+      margin-top: 20px;
+      border-top: 2px solid #d4af37;
+      padding-top: 15px;
+      background: rgba(0,0,0,0.7);
+      border-radius: 8px;
+    }
+    .contact h3 {
+      margin: 0 0 15px 0;
+      color: #fff;
+    }
+    .contact-layout {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+    .qr-codes {
+      display: flex;
+      flex-direction: row;
+      gap: 15px;
+      flex: 0 0 auto;
+    }
+    .qr-codes img {
+      height: 90px;
+      border-radius: 6px;
+      background: #fff;
+      padding: 3px;
+    }
+    .contact-details {
+      flex: 1;
+    }
+    .contact-details p {
+      margin: 6px 0;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="poster">
+    <div class="content">
+      <div>
+        <div class="header">
+          <img src="assets/logo.svg" alt="Logo Verla 23.4">
+          <h1>Verla 23.4</h1>
+        </div>
+        <div class="slogan">
+          <p>连接中国制造与墨西哥 / 中东 / 东南亚的专业服务桥梁</p>
+          <p>A Professional Bridge Connecting China Manufacturing with Mexico, Middle East & Southeast Asia</p>
+        </div>
+        <div class="services">
+          <div class="service-box">
+            <img src="assets/service01.png" alt="材料供应链">
+            <h3>材料与供应链调查 | Materials & Supply Chain Review</h3>
+          </div>
+          <div class="service-box">
+            <img src="assets/service02.png" alt="工程咨询">
+            <h3>建筑与工程咨询 | Construction & Engineering Consulting</h3>
+          </div>
+          <div class="service-box">
+            <img src="assets/service03.png" alt="投资合作">
+            <h3>投资与合作对接 | Investment & Partnership Match</h3>
+          </div>
+          <div class="service-box">
+            <img src="assets/service04.png" alt="项目执行">
+            <h3>项目执行支持 | Project Execution Support</h3>
+          </div>
+          <div class="service-box">
+            <img src="assets/service05.png" alt="法务支持">
+            <h3>法律与合规支持 | Legal & Compliance Support</h3>
+          </div>
+          <div class="service-box">
+            <img src="assets/service06.png" alt="财务税务">
+            <h3>财务与税务咨询 | Finance & Tax Advisory</h3>
+          </div>
+        </div>
+      </div>
+      <div class="contact">
+        <h3>联系我们 | Contact Us</h3>
+        <div class="contact-layout">
+          <div class="qr-codes">
+            <img src="assets/whatsapp-qr.jpg" alt="WhatsApp QR">
+            <img src="assets/wechat-qr.jpg" alt="WeChat QR">
+          </div>
+          <div class="contact-details">
+            <p>WhatsApp: +52 1 812 880 9927</p>
+            <p>WeChat: lindoai</p>
+            <p>Email: info@verla234.org</p>
+            <p>Website: www.verla234.org</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,14 +1,2 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
-  <defs>
-    <style>
-      .gold { stroke: #d4af37; fill: none; stroke-linecap: round; stroke-linejoin: round; }
-    </style>
-  </defs>
-  <!-- ring -->
-  <circle class="gold" cx="512.0" cy="512.0" r="419.84" stroke-width="48"/>
-  <!-- tilted axis -->
-  <line class="gold" x1="324.92745759539287" y1="79.70086111781762" x2="699.0725424046071" y2="944.2991388821824" stroke-width="48"/>
-  <!-- 23.4° arc -->
-  <path class="gold" d="M 512.00,742.91 A 230.91,230.91 0 0 1 603.71,723.92" stroke-width="36"/>
-  <circle cx="603.71" cy="723.92" r="22.0" fill="#d4af37"/>
-</svg>
+<?xml version="1.0" encoding="utf-8" ?>
+<svg baseProfile="full" height="200px" version="1.1" width="200px" xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink"><defs /><circle cx="100" cy="100" fill="none" r="90" stroke="#d4af37" stroke-width="6" /><ellipse cx="100" cy="100" fill="none" rx="90" ry="63.63961030678928" stroke="#d4af37" stroke-width="1" /><ellipse cx="100" cy="100" fill="none" rx="90" ry="84.57233587073176" stroke="#d4af37" stroke-width="1" /><ellipse cx="100" cy="100" fill="none" rx="90" ry="84.57233587073176" stroke="#d4af37" stroke-width="1" /><ellipse cx="100" cy="100" fill="none" rx="90" ry="63.63961030678928" stroke="#d4af37" stroke-width="1" /><ellipse cx="100" cy="100" fill="none" rx="63.63961030678928" ry="90" stroke="#d4af37" stroke-width="1" /><ellipse cx="100" cy="100" fill="none" rx="84.57233587073176" ry="90" stroke="#d4af37" stroke-width="1" /><ellipse cx="100" cy="100" fill="none" rx="84.57233587073176" ry="90" stroke="#d4af37" stroke-width="1" /><ellipse cx="100" cy="100" fill="none" rx="63.63961030678928" ry="90" stroke="#d4af37" stroke-width="1" /><line stroke="#d4af37" stroke-linecap="round" stroke-width="10" x1="17.402083688441692" x2="182.59791631155832" y1="135.74331015713025" y2="64.25668984286975" /></svg>
