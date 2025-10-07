@@ -3,8 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Verla 23.4 海报 - 联系方式优化版</title>
+  <meta name="color-scheme" content="dark only">
+  <title>Verla 23.4 海报 - 四语版</title>
   <style>
+    @page { size: A4; margin: 0; }
+    html, body { height: 100%; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
     body {
       margin: 0;
       padding: 0;
@@ -25,11 +30,22 @@
       padding: 40px;
       position: relative;
     }
+    @media print {
+      body { background: #000 !important; }
+      .poster {
+        width: 210mm !important;
+        height: 297mm !important;
+        background: url('assets/hero-bg.png') no-repeat center/cover !important;
+        border: 3px solid #d4af37 !important;
+        -webkit-print-color-adjust: exact;
+      }
+    }
+
     .poster::before {
       content: "";
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.7);
+      background: rgba(0,0,0,0.72);
       z-index: 0;
     }
     .content {
@@ -40,51 +56,47 @@
       height: 100%;
       justify-content: space-between;
     }
-    .header {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .header img {
-      height: 70px;
-      margin-bottom: 10px;
-    }
-    .header h1 {
-      margin: 0;
-      font-size: 32px;
-      color: #d4af37;
-      letter-spacing: 2px;
-    }
+    .header { text-align: center; margin-bottom: 20px; }
+    .header img { height: 70px; margin-bottom: 10px; }
+    .header h1 { margin: 0; font-size: 32px; color: #d4af37; letter-spacing: 2px; }
+
     .slogan {
-      font-size: 18px;
+      font-size: 16px;
       margin: 20px 0 30px 0;
       line-height: 1.6;
-      color: #f0f0f0;
+      font-weight: bold;
+      color: #d4af37; /* 更粗的金色字 */
       text-align: center;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
-    }
-    .services {
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
       display: flex;
-      flex-direction: column;
-      gap: 15px;
+      justify-content: space-between;
+      gap: 20px;
     }
+    .slogan .left, .slogan .right { flex: 1; }
+    .slogan .left p, .slogan .right p { margin: 4px 0; }
+    .slogan .right p { direction: rtl; text-align: right; }
+
+    .services { display: flex; flex-direction: column; gap: 15px; }
     .service-box {
-      display: flex;
-      align-items: center;
+      display: flex; align-items: flex-start;
       background: rgba(0,0,0,0.55);
-      border: 1px solid rgba(212,175,55,0.6);
-      border-radius: 10px;
-      padding: 15px;
+      border: 1px solid #d4af37;
+      border-radius: 10px; padding: 15px;
+      break-inside: avoid; page-break-inside: avoid;
     }
     .service-box img {
-      height: 50px;
-      margin-right: 15px;
+      height: 46px; margin-right: 14px;
+      filter: drop-shadow(0 0 6px #d4af37);
+      flex: 0 0 auto;
     }
-    .service-box h3 {
-      margin: 0;
-      font-size: 16px;
-      color: #d4af37;
-      line-height: 1.4;
-    }
+    .service-text { display: flex; flex-direction: column; gap: 6px; color: #f0f0f0; width: 100%; }
+    .service-text .line { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+    .service-text .line-1 { justify-content: flex-start; }
+    .service-text .line-1 .sep { opacity: .8; }
+    .service-text .line-2 { justify-content: space-between; }
+    .service-text .zh, .service-text .es, .service-text .en, .service-text .ar { color: #f0f0f0; font-size: 13.5px; }
+    .service-text .ar { direction: rtl; text-align: right; }
+
     .contact {
       margin-top: 20px;
       border-top: 2px solid #d4af37;
@@ -92,35 +104,14 @@
       background: rgba(0,0,0,0.7);
       border-radius: 8px;
     }
-    .contact h3 {
-      margin: 0 0 15px 0;
-      color: #fff;
-    }
-    .contact-layout {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 30px;
-    }
-    .qr-codes {
-      display: flex;
-      flex-direction: row;
-      gap: 15px;
-      flex: 0 0 auto;
-    }
-    .qr-codes img {
-      height: 90px;
-      border-radius: 6px;
-      background: #fff;
-      padding: 3px;
-    }
-    .contact-details {
-      flex: 1;
-    }
-    .contact-details p {
-      margin: 6px 0;
-      font-size: 14px;
-    }
+    .contact h3 { margin: 0 0 15px 0; color: #fff; }
+    .contact-layout { display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+    .qr-codes { display: flex; flex-direction: row; gap: 15px; flex: 0 0 auto; }
+    .qr-codes img { height: 90px; border-radius: 6px; background: #fff; padding: 3px; }
+
+    .contact-details { flex: 1; }
+    .contact-details p { margin: 6px 0; font-size: 14px; }
+    .contact-details span.label { color: #d4af37; font-weight: bold; margin-right: 6px; }
   </style>
 </head>
 <body>
@@ -132,48 +123,120 @@
           <h1>Verla 23.4</h1>
         </div>
         <div class="slogan">
-          <p>连接中国制造与墨西哥 / 中东 / 东南亚的专业服务桥梁</p>
-          <p>A Professional Bridge Connecting China Manufacturing with Mexico, Middle East & Southeast Asia</p>
+          <div class="left">
+            <p>连接中国制造与墨西哥 / 中东 / 东南亚的专业服务桥梁</p>
+            <p>Un puente profesional que conecta la manufactura china con México, Medio Oriente y el Sudeste Asiático</p>
+          </div>
+          <div class="right">
+            <p>A Professional Bridge Connecting China Manufacturing with Mexico, Middle East & Southeast Asia</p>
+            <p>جسر مهني يربط التصنيع الصيني بالمكسيك والشرق الأوسط وجنوب شرق آسيا</p>
+          </div>
         </div>
         <div class="services">
+          <!-- 01 -->
           <div class="service-box">
             <img src="assets/service01.png" alt="材料供应链">
-            <h3>材料与供应链调查 | Materials & Supply Chain Review</h3>
+            <div class="service-text">
+              <div class="line line-1">
+                <span class="zh">材料与供应链调查</span>
+                <span class="sep">·</span>
+                <span class="es">Revisión de materiales y cadena de suministro</span>
+              </div>
+              <div class="line line-2">
+                <span class="en">Materials & Supply Chain Review</span>
+                <span class="ar" dir="rtl">مراجعة المواد وسلسلة التوريد</span>
+              </div>
+            </div>
           </div>
+          <!-- 02 -->
           <div class="service-box">
             <img src="assets/service02.png" alt="工程咨询">
-            <h3>建筑与工程咨询 | Construction & Engineering Consulting</h3>
+            <div class="service-text">
+              <div class="line line-1">
+                <span class="zh">建筑与工程咨询</span>
+                <span class="sep">·</span>
+                <span class="es">Consultoría en construcción e ingeniería</span>
+              </div>
+              <div class="line line-2">
+                <span class="en">Construction & Engineering Consulting</span>
+                <span class="ar" dir="rtl">الاستشارات الإنشائية والهندسية</span>
+              </div>
+            </div>
           </div>
+          <!-- 03 -->
           <div class="service-box">
             <img src="assets/service03.png" alt="投资合作">
-            <h3>投资与合作对接 | Investment & Partnership Match</h3>
+            <div class="service-text">
+              <div class="line line-1">
+                <span class="zh">投资与合作对接</span>
+                <span class="sep">·</span>
+                <span class="es">Conexión de inversiones y asociaciones</span>
+              </div>
+              <div class="line line-2">
+                <span class="en">Investment & Partnership Match</span>
+                <span class="ar" dir="rtl">مواءمة الاستثمار والشراكة</span>
+              </div>
+            </div>
           </div>
+          <!-- 04 -->
           <div class="service-box">
             <img src="assets/service04.png" alt="项目执行">
-            <h3>项目执行支持 | Project Execution Support</h3>
+            <div class="service-text">
+              <div class="line line-1">
+                <span class="zh">项目执行支持</span>
+                <span class="sep">·</span>
+                <span class="es">Apoyo en la ejecución de proyectos</span>
+              </div>
+              <div class="line line-2">
+                <span class="en">Project Execution Support</span>
+                <span class="ar" dir="rtl">دعم تنفيذ المشروع</span>
+              </div>
+            </div>
           </div>
+          <!-- 05 -->
           <div class="service-box">
             <img src="assets/service05.png" alt="法务支持">
-            <h3>法律与合规支持 | Legal & Compliance Support</h3>
+            <div class="service-text">
+              <div class="line line-1">
+                <span class="zh">法律与合规支持</span>
+                <span class="sep">·</span>
+                <span class="es">Apoyo legal y de cumplimiento</span>
+              </div>
+              <div class="line line-2">
+                <span class="en">Legal & Compliance Support</span>
+                <span class="ar" dir="rtl">الدعم القانوني والامتثال</span>
+              </div>
+            </div>
           </div>
+          <!-- 06 -->
           <div class="service-box">
             <img src="assets/service06.png" alt="财务税务">
-            <h3>财务与税务咨询 | Finance & Tax Advisory</h3>
+            <div class="service-text">
+              <div class="line line-1">
+                <span class="zh">财务与税务咨询</span>
+                <span class="sep">·</span>
+                <span class="es">Asesoría financiera y fiscal</span>
+              </div>
+              <div class="line line-2">
+                <span class="en">Finance & Tax Advisory</span>
+                <span class="ar" dir="rtl">الاستشارات المالية والضريبية</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
       <div class="contact">
-        <h3>联系我们 | Contact Us</h3>
+        <h3>联系我们 | Contact Us | Contáctenos | اتصل بنا</h3>
         <div class="contact-layout">
           <div class="qr-codes">
             <img src="assets/whatsapp-qr.jpg" alt="WhatsApp QR">
             <img src="assets/wechat-qr.jpg" alt="WeChat QR">
           </div>
           <div class="contact-details">
-            <p>WhatsApp: +52 1 812 880 9927</p>
-            <p>WeChat: lindoai</p>
-            <p>Email: info@verla234.org</p>
-            <p>Website: www.verla234.org</p>
+            <p><span class="label">WhatsApp</span> +52 812 880 9927</p>
+            <p><span class="label">WeChat</span> lindoai</p>
+            <p><span class="label">Email</span> info@verla234.org</p>
+            <p><span class="label">Website</span> www.verla234.org</p>
           </div>
         </div>
       </div>

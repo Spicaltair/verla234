@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>加入顾问网络 | Join as Consultant | Verla 23.4</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: #0a0a0a;
+      color: #f0f0f0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      padding: 40px 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #d4af37;
+      margin-bottom: 10px;
+    }
+    p.subtitle {
+      text-align: center;
+      color: #ccc;
+      margin-bottom: 40px;
+    }
+    form {
+      max-width: 720px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      border: 1px solid #d4af37;
+      border-radius: 12px;
+    }
+    label {
+      display: block;
+      margin-top: 16px;
+      font-weight: bold;
+      color: #d4af37;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border-radius: 6px;
+      border: 1px solid #666;
+      background: #111;
+      color: #eee;
+      font-size: 14px;
+    }
+    textarea { resize: vertical; }
+    button {
+      margin-top: 25px;
+      width: 100%;
+      background: linear-gradient(90deg, #d4af37, #c4952f);
+      color: #000;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #000;
+      color: #d4af37;
+      border: 1px solid #d4af37;
+    }
+    .note {
+      margin-top: 10px;
+      font-size: 13px;
+      color: #999;
+      text-align: center;
+    }
+
+    /* 提交成功弹窗样式（修正后） */
+    #success-message {
+    display: none;                 /* 默认隐藏 */
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+
+    /* 不要再写 display:flex；用类名来切换 */
+    }
+    #success-message .box {
+    background: #111;
+    border: 2px solid #d4af37;
+    border-radius: 12px;
+    padding: 40px 60px;
+    text-align: center;
+    color: #f0f0f0;
+    box-shadow: 0 0 15px #d4af37;
+    }
+    #success-message h2 {
+    color: #d4af37;
+    margin-bottom: 15px;
+    }
+    /* 新增：显示状态 */
+    #success-message.show {
+    display: flex;                 /* 需要显示时再变成 flex 居中 */
+    justify-content: center;
+    align-items: center;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>加入顾问网络 | Join as Consultant</h1>
+  <p class="subtitle">
+    成为 Verla 23.4 全球服务顾问，与我们一起连接世界资源<br>
+    Become part of the Verla 23.4 global consultant network
+  </p>
+
+  <form id="consultantForm" action="https://formspree.io/f/xdkwdqvo" method="POST">
+    <label>昵称或代称 / Nickname (alias)</label>
+    <input type="text" name="nickname" placeholder="例如 Leo 工程师 / Designer M">
+
+    <label>可提供的服务类型 / Services offered</label>
+    <textarea name="services" rows="3" placeholder="结构设计、造价咨询、法规顾问 / Structural design, cost consulting, legal advice etc."></textarea>
+
+    <label>覆盖区域 / Regions covered</label>
+    <input type="text" name="regions" placeholder="墨西哥、中东、东南亚 / Mexico, Middle East, Southeast Asia">
+
+    <label>工作年限 / Years of experience</label>
+    <select name="experience">
+      <option value="">请选择 / Select</option>
+      <option>1–3 年 / Years</option>
+      <option>4–7 年 / Years</option>
+      <option>8–15 年 / Years</option>
+      <option>15 年以上 / 15+ Years</option>
+    </select>
+
+    <label>可使用的语言 / Languages spoken</label>
+    <input type="text" name="languages" placeholder="中文、英文、西班牙语 / Chinese, English, Spanish">
+
+    <label>期望时薪 (USD/小时) / Expected hourly rate (USD/hr)</label>
+    <input type="number" name="rate" placeholder="例如 30 / e.g. 30">
+
+    <label>工作可用性 / Availability</label>
+    <select name="availability">
+      <option value="">请选择 / Select</option>
+      <option>全职 / Full-time</option>
+      <option>兼职 / Part-time</option>
+      <option>项目制 / Project-based</option>
+    </select>
+
+    <label>可开始服务时间 / Start availability</label>
+    <input type="text" name="start_time" placeholder="可立即 / 1 周后 / 每周 20 小时 / Immediately / 1 week later / 20 hrs per week">
+
+    <label>联系方式 (可选) / Contact info (optional)</label>
+    <input type="text" name="contact" placeholder="邮箱 / 微信 / Telegram / Email / WeChat / Telegram">
+
+    <label>备注 (可选) / Notes (optional)</label>
+    <textarea name="notes" rows="3" placeholder="补充说明 / Additional information or portfolio notes"></textarea>
+
+    <button type="submit">提交申请 / Submit Application</button>
+  </form>
+
+  <p class="note">
+    我们尊重隐私，不要求实名。<br>
+    We respect your privacy — real name is not required.
+  </p>
+
+  <!-- 提交成功弹窗 -->
+  <div id="success-message">
+    <div class="box">
+      <h2>提交成功 / Submission Received!</h2>
+      <p>感谢您加入 Verla 23.4 顾问网络，我们会尽快联系您。<br>
+      Thank you for joining the Verla 23.4 consultant network.<br>
+      Redirecting to home page...</p>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('consultantForm');
+    const successMessage = document.getElementById('success-message');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (response.ok) {
+        form.reset();
+        successMessage.classList.add('show');
+        setTimeout(() => { window.location.href = "index.html"; }, 4500);
+      } else {
+        alert("提交失败，请稍后再试 / Submission failed, please try again.");
+      }
+    });
+  </script>
+</body>
+</html>
